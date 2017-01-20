@@ -7,6 +7,8 @@ class Round
 	def start
 		Interface.start_message
 		player_choose_marker
+		create_computer_challenger(@human.marker)
+		player_sequence_selection
 	end
 
 	def player_choose_marker
@@ -21,5 +23,13 @@ class Round
 			player_choose_marker
 		end
 	end
-	
+
+	def create_computer_challenger(player_choice)
+		@computer = Computer.new(player_choice)
+	end
+
+	def player_sequence_selection
+		@players = [@human, @computer].shuffle
+	end
+
 end
