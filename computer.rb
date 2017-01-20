@@ -1,8 +1,8 @@
-class Human
-	
+class Computer
+
 	attr_reader :marker
 
-	def initialize(marker)
+	def initialize(player_marker)
 		@marker = marker
 	end
 
