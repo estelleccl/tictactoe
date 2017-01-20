@@ -66,5 +66,10 @@ class Interface
 		def star_divider
 			puts "************************************"
 		end
+
+		def computer_thinking
+			puts "I'm thinking..."
+		  sleep(1)
+		end
 	end
 end

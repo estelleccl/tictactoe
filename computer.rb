@@ -11,6 +11,7 @@ class Computer
 	end
 
 	def move(board)
+		Interface.computer_thinking
 	end
 
 end
