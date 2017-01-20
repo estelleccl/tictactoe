@@ -34,14 +34,17 @@ class Round
 	end
 
 	def lets_play
-		@players.each do |player|
-			Interface.display_board(@board.boxes)
-			Interface.whose_turn(player)
-			player.move(@board)
-			@turn = player.class.name
-		end
-		
+		begin
+			@players.each do |player|
+				Interface.display_board(@board.boxes)
+				Interface.whose_turn(player)
+				player.move(@board)
+				@turn = player.class.name
+				break if @board.winner? || @board.tie?
+			end
+		end until @board.winner? || @board.tie?
 		Interface.display_board(@board.boxes)
+		Interface.winner_message(@turn)
 	end
 
 end

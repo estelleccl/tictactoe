@@ -56,5 +56,15 @@ class Interface
 			puts "\n"
 			puts " ---  ---  --- "
 		end
+
+		def winner_message(player)
+			star_divider
+			puts "#{player} Won!!!".center(35)
+			star_divider
+		end
+
+		def star_divider
+			puts "************************************"
+		end
 	end
 end
