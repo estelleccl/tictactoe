@@ -24,7 +24,6 @@ class Human
 
 	def check_quit_board(choice)
 		abort if choice == 11
-		
 	end
 
 end

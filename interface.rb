@@ -41,7 +41,7 @@ class Interface
 		def whose_turn(player)
 			puts "#{player.class.name}'s turn"
 		end
-		
+
 		def prompting_human_moves
 			puts "Please the enter number you want to place your marker. To quit - enter '11' "
 			divider
@@ -50,6 +50,11 @@ class Interface
 		def invalid_input
 			puts "I'm sorry, This box has been picked or it is an invalid input."
 			prompting_human_moves
+		end
+
+		def soft_divider
+			puts "\n"
+			puts " ---  ---  --- "
 		end
 	end
 end
