@@ -9,6 +9,7 @@ class Round
 		player_choose_marker
 		create_computer_challenger(@human.marker)
 		player_sequence_selection
+		lets_play
 	end
 
 	def player_choose_marker
@@ -30,6 +31,14 @@ class Round
 
 	def player_sequence_selection
 		@players = [@human, @computer].shuffle
+	end
+
+	def lets_play
+		@players.each do |player|
+			Interface.display_board(@board.boxes)
+			Interface.whose_turn(player)
+		end
+		Interface.display_board(@board.boxes)
 	end
 
 end

@@ -27,6 +27,19 @@ class Interface
 			choose_x_or_o
 		end
 
-		
+		def display_board(board)
+			divider
+			soft_divider
+			board.each_with_index do |position, index|
+				print "| #{position} |"
+				soft_divider if (index+1) % 3 == 0
+			end
+			puts "\n"
+			divider
+		end
+
+		def whose_turn(player)
+			puts "#{player.class.name}'s turn"
+		end
 	end
 end
