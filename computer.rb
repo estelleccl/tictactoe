@@ -10,4 +10,7 @@ class Computer
 		player_marker ? 'O' : 'X'
 	end
 
+	def move(board)
+	end
+
 end

@@ -37,7 +37,10 @@ class Round
 		@players.each do |player|
 			Interface.display_board(@board.boxes)
 			Interface.whose_turn(player)
+			player.move(@board)
+			@turn = player.class.name
 		end
+		
 		Interface.display_board(@board.boxes)
 	end
 
