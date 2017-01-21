@@ -1,3 +1,3 @@
 # Tic Tac Toe Ruby App
 
-Computer Always Win
+Computer Always Win. Try Challenge me!!!
