@@ -24,6 +24,23 @@ class Computer
 			return -10
 		end
 
+		scores = []
+
+		board.available_boxes.each do |box|
+			board.place_move(box,current_player)
+			score = -minimax(board, switch_marker(current_player), depth + 1)
+			scores << [box, score]
+
+		end
+		best_move = scores.max_by {|box, score| score}[0]
+		best_score = scores.max_by {|box, score| score}[1]
+
+		if depth > 0
+			return best_score
+		else
+			return best_move
+		end
+
 	end
 
 end

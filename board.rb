@@ -48,4 +48,14 @@ class Board
 		]
 	end
 
+	def available_boxes
+		available_boxes = []
+		@boxes.each do |box|
+			available_boxes << box if box.is_a?(Integer)
+		end
+		available_boxes
+	end
+
+
+
 end
