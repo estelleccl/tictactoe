@@ -13,6 +13,7 @@ class Computer
 	def move(board)
 		Interface.computer_thinking
 		computer_move = minimax(board,self.marker)
+
 		board.place_move(computer_move, self.marker)
 	end
 
