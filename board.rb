@@ -56,6 +56,8 @@ class Board
 		available_boxes
 	end
 
-
+	def reset_box(box)
+		@boxes[box-1] = box
+	end
 
 end

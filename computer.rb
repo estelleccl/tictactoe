@@ -30,7 +30,7 @@ class Computer
 			board.place_move(box,current_player)
 			score = -minimax(board, switch_marker(current_player), depth + 1)
 			scores << [box, score]
-
+			board.reset_box(box)
 		end
 		best_move = scores.max_by {|box, score| score}[0]
 		best_score = scores.max_by {|box, score| score}[1]
