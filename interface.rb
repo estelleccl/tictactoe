@@ -63,6 +63,12 @@ class Interface
 			star_divider
 		end
 
+		def tie_message
+			star_divider
+			puts "It is tie! Good Job!".center(35)
+			star_divider
+		end
+
 		def star_divider
 			puts "************************************"
 		end

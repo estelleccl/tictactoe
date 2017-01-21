@@ -1,10 +1,10 @@
 class Board
 
-	attr_reader :boxes
+	attr_reader :boxes, :winner
 
 	def initialize
 		@boxes = (1..9).to_a
-		@ctr = 0
+		@winner = nil
 	end
 
 	def valid_input?(choice)
@@ -12,18 +12,15 @@ class Board
 	end
 
 	def place_move(choice, marker)
+
 		@boxes[choice-1] = marker
 	end
 
 	def winner?
-		@ctr += 1
 		duplicate_winning_board
-		if @ctr > 2
-			@winning_combination_board.each do |combi|
-				if combi.uniq.length == 1
-					@winner = combi.uniq
-					return true 
-				end
+		@winning_combination_board.each do |combi|
+			if combi.uniq.length == 1
+				return combi.uniq 
 			end
 		end
 		false
@@ -31,6 +28,10 @@ class Board
 
 	def tie?
 		@boxes.all? {|box| box.is_a?(String) }
+	end
+
+	def game_over?
+		winner?|| tie?
 	end
 
 	def duplicate_winning_board

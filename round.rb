@@ -44,7 +44,11 @@ class Round
 			end
 		end until @board.winner? || @board.tie?
 		Interface.display_board(@board.boxes)
-		Interface.winner_message(@turn)
+		if @board.tie?
+			Interface.tie_message
+		else
+			Interface.winner_message(@turn)
+		end
 	end
 
 end
