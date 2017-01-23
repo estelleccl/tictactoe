@@ -13,12 +13,10 @@ class Computer
 	def move(board)
 		Interface.computer_thinking
 		computer_move = minimax(board,self.marker)
-
 		board.place_move(computer_move, self.marker)
 	end
 
 	def minimax(board,current_player,depth=0)
-
 		if board.tie?
 			return 0
 		elsif board.game_over?
@@ -41,7 +39,5 @@ class Computer
 		else
 			return best_move
 		end
-
 	end
-
 end
